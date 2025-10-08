@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\3ds\\Desktop\\Login\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{12EC8B2C-26C3-4879-9924-C08B22DFA240}|Login\\Login.csproj|c:\\users\\3ds\\desktop\\login\\login\\models\\constantes\\colaboradortipoconstante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12EC8B2C-26C3-4879-9924-C08B22DFA240}|Login\\Login.csproj|solutionrelative:login\\models\\constantes\\colaboradortipoconstante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12EC8B2C-26C3-4879-9924-C08B22DFA240}|Login\\Login.csproj|c:\\users\\3ds\\desktop\\login\\login\\models\\constantes\\situacaoconstantes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12EC8B2C-26C3-4879-9924-C08B22DFA240}|Login\\Login.csproj|solutionrelative:login\\models\\constantes\\situacaoconstantes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12EC8B2C-26C3-4879-9924-C08B22DFA240}|Login\\Login.csproj|c:\\users\\3ds\\desktop\\login\\login\\models\\colaborador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12EC8B2C-26C3-4879-9924-C08B22DFA240}|Login\\Login.csproj|solutionrelative:login\\models\\colaborador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12EC8B2C-26C3-4879-9924-C08B22DFA240}|Login\\Login.csproj|c:\\users\\3ds\\desktop\\login\\login\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12EC8B2C-26C3-4879-9924-C08B22DFA240}|Login\\Login.csproj|solutionrelative:login\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12EC8B2C-26C3-4879-9924-C08B22DFA240}|Login\\Login.csproj|c:\\users\\3ds\\desktop\\login\\login\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{12EC8B2C-26C3-4879-9924-C08B22DFA240}|Login\\Login.csproj|solutionrelative:login\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12EC8B2C-26C3-4879-9924-C08B22DFA240}|Login\\Login.csproj|c:\\users\\3ds\\desktop\\login\\login\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12EC8B2C-26C3-4879-9924-C08B22DFA240}|Login\\Login.csproj|solutionrelative:login\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\Login\\Login\\appsettings.json",
+              "RelativeDocumentMoniker": "Login\\appsettings.json",
+              "ToolTip": "C:\\Users\\3ds\\Desktop\\Login\\Login\\appsettings.json",
+              "RelativeToolTip": "Login\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-08T15:14:04.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\Login\\Login\\Program.cs",
+              "RelativeDocumentMoniker": "Login\\Program.cs",
+              "ToolTip": "C:\\Users\\3ds\\Desktop\\Login\\Login\\Program.cs",
+              "RelativeToolTip": "Login\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T15:14:03.066Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "colaboradorTipoConstante.cs",
+              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\Login\\Login\\Models\\Constantes\\colaboradorTipoConstante.cs",
+              "RelativeDocumentMoniker": "Login\\Models\\Constantes\\colaboradorTipoConstante.cs",
+              "ToolTip": "C:\\Users\\3ds\\Desktop\\Login\\Login\\Models\\Constantes\\colaboradorTipoConstante.cs",
+              "RelativeToolTip": "Login\\Models\\Constantes\\colaboradorTipoConstante.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T15:06:58.02Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "situacaoConstantes.cs",
+              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\Login\\Login\\Models\\Constantes\\situacaoConstantes.cs",
+              "RelativeDocumentMoniker": "Login\\Models\\Constantes\\situacaoConstantes.cs",
+              "ToolTip": "C:\\Users\\3ds\\Desktop\\Login\\Login\\Models\\Constantes\\situacaoConstantes.cs",
+              "RelativeToolTip": "Login\\Models\\Constantes\\situacaoConstantes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T14:59:27.319Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Colaborador.cs",
+              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\Login\\Login\\Models\\Colaborador.cs",
+              "RelativeDocumentMoniker": "Login\\Models\\Colaborador.cs",
+              "ToolTip": "C:\\Users\\3ds\\Desktop\\Login\\Login\\Models\\Colaborador.cs",
+              "RelativeToolTip": "Login\\Models\\Colaborador.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T14:56:43.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Cliente.cs",
+              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\Login\\Login\\Models\\Cliente.cs",
+              "RelativeDocumentMoniker": "Login\\Models\\Cliente.cs",
+              "ToolTip": "C:\\Users\\3ds\\Desktop\\Login\\Login\\Models\\Cliente.cs",
+              "RelativeToolTip": "Login\\Models\\Cliente.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T14:29:27.395Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
