@@ -2,8 +2,8 @@
 {
     public class colaboradorTipoConstante
     {
-        public const string Comum = "";
+        public const string Comum = "C";
 
-        public const string Gerente = "";
+        public const string Gerente = "G";
     }
 }

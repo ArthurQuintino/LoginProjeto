@@ -5,36 +5,43 @@ namespace Login.Models
 {
     public class Cliente
     {
-        [Display(Name = "Código", Description = "Código do cliente")]
+        /* PK */
+        [Display(Name = "Código", Description = "Código.")]
         public int Id { get; set; }
 
-
-        [Display(Name = "Nome", Description = "Nome Completo do Cliente")]
+        [Display(Name = "Nome completo", Description = "Nome e Sobrenome.")]
+        [Required(ErrorMessage = "O nome completo é obrigatório.")]
         public string Nome { get; set; }
 
+        [Display(Name = "Nascimento")]
+        [Required(ErrorMessage = "A data é obrigatória")]
+        public DateTime Nascimento { get; set; }
 
-        [Display(Name = "DataNascimento", Description = "Data de Nascimento do Cliente")]
-        public DateOnly DataNascimento { get; set; }
-
-        [Display(Name = "Sexo", Description = "Sexo do Cliente")]
+        [Display(Name = "Sexo")]
+        [Required(ErrorMessage = "Selecione uma opção")]
+        [StringLength(1, ErrorMessage = "Deve conter 1 caracter")]
         public string Sexo { get; set; }
 
-        [Display(Name = "CPF", Description = "CPF Do Cliente")]
-        public BigInteger CPF { get; set; }
+        [Display(Name = "CPF")]
+        [Required(ErrorMessage = "O CPF é obrigatório")]
+        public string CPF { get; set; }
 
-        [Display(Name = "CEP", Description = "CEP Do Cliente")]
-        public int CEP { get; set; }
+        [Display(Name = "Celular")]
+        [Required(ErrorMessage = "O Celular é obrigatório")]
+        public string Telefone { get; set; }
 
-        [Display(Name = "Email", Description = "Email do Cliente")]
+        [Display(Name = "Email")]
+        [EmailAddress(ErrorMessage = " O Email não é valido")]
+        [RegularExpression(".+\\@.+\\..+", ErrorMessage = "Informe um e-mail válido...")]
         public string Email { get; set; }
 
-        [Display(Name = "Telefone", Description = "Telefone do Cliente")]
-        public BigInteger Telefone { get; set; }
-
-        [Display(Name = "Senha", Description = "Senha do Cliente")]
+        [Display(Name = "Senha")]
+        [DataType(DataType.Password)]
+        [Required(ErrorMessage = "O senha é obrigatório")]
+        [StringLength(10, MinimumLength = 6, ErrorMessage = "A senha deve ter entre 6 e 10 caracteres")]
         public string Senha { get; set; }
 
-        [Display(Name = "Situação", Description = "Situação do Cliente")]
-        public string Situacao { get; set; }
+        [Display(Name = "Situação")]
+        public string? Situacao { get; set; }
     }
 }

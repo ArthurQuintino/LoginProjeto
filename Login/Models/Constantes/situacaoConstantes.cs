@@ -2,8 +2,8 @@
 {
     public class situacaoConstantes
     {
-        public const string Ativo = "";
+        public const string Ativo = "A";
 
-        public const string Desativado = "";
+        public const string Desativado = "D";
     }
 }
