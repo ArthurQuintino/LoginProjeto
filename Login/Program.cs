@@ -1,7 +1,17 @@
+using Login.Repository;
+using Login.Repository.Contract;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
+
+builder.Services.AddScoped<IColaboradorRepository, ColaboradorRepository>();
+
 
 var app = builder.Build();
 

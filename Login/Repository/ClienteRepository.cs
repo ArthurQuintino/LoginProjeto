@@ -3,16 +3,21 @@ using Login.Models.Constantes;
 using Login.Repository.Contract;
 using MySql.Data.MySqlClient;
 using System.Data;
+using X.PagedList;
+using X.PagedList.Extensions;
+using static Org.BouncyCastle.Math.EC.ECCurve;
 
 namespace Login.Repository
 {
     public class ClienteRepository : IClienteRepository
     {
         private readonly string _conexaoMySQL;
+        IConfiguration _config;
 
         public ClienteRepository(IConfiguration conf)
         {
             _conexaoMySQL = conf.GetConnectionString("ConexaoMySQL");
+            _config = conf;
         }
 
         public void Atualizar(Cliente cliente)
@@ -52,13 +57,47 @@ namespace Login.Repository
 
         public Cliente BuscaCpfCliente(string CPF)
         {
-            throw new NotImplementedException();
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("select CPF from Cliente WHERE CPF=@CPF ", conexao);
+                cmd.Parameters.AddWithValue("@CPF", CPF);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                MySqlDataReader dr;
+
+                Cliente cliente = new Cliente();
+                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (dr.Read())
+                {
+                    cliente.CPF = (string)(dr["CPF"]);
+
+                }
+                return cliente;
+            }
+        }
+        public Cliente BuscaEmailCliente(string email)
+        {
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("select Email from Cliente WHERE Email=@Email ", conexao);
+                cmd.Parameters.AddWithValue("@Email", email);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                MySqlDataReader dr;
+
+                Cliente cliente = new Cliente();
+                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (dr.Read())
+                {
+                    cliente.Email = (string)(dr["Email"]);
+
+                }
+                return cliente;
+            }
         }
 
-        public Cliente BuscaEmailCliente(string CPF)
-        {
-            throw new NotImplementedException();
-        }
 
         public void Cadastrar(Cliente cliente)
         {
@@ -207,11 +246,7 @@ namespace Login.Repository
                 return cliente;
             }
         }
-
-        public Cliente ObterCliente(Cliente cliente)
-        {
-            throw new NotImplementedException();
-        }
+            
 
 
         public IEnumerable<Cliente> ObterTodosClientes()
@@ -249,5 +284,85 @@ namespace Login.Repository
                 return cliList;
             }
         }
+
+        public Cliente ObterClienteporId(int Id)
+        {
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("select * from Cliente WHERE Id=@Id ", conexao);
+                cmd.Parameters.AddWithValue("@Id", Id);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                MySqlDataReader dr;
+
+                Cliente cliente = new Cliente();
+                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (dr.Read())
+                {
+                    cliente.Id = (Int32)(dr["Id"]);
+                    cliente.Nome = (string)(dr["Nome"]);
+                    cliente.Nascimento = (DateTime)(dr["Nascimento"]);
+                    cliente.Sexo = (string)(dr["Sexo"]);
+                    cliente.CPF = (string)(dr["CPF"]);
+                    cliente.Telefone = (string)(dr["Telefone"]);
+                    cliente.Email = (string)(dr["Email"]);
+                    cliente.Senha = (string)(dr["Senha"]);
+                    cliente.Situacao = (string)(dr["Situacao"]);
+
+                }
+                return cliente;
+            }
+        }
+
+
+        public IPagedList<Cliente> ObterTodosClientes(int? pagina, string pesquisa)
+        {
+            int RegistroPorPagina = _config.GetValue<int>("RegistroPorPagina");
+
+            int NumeroPagina = pagina ?? 1;
+
+            var clientePesquisadoEmail = BuscaEmailCliente(pesquisa);
+
+            //if (!string.IsNullOrEmpty(pesquisa))
+            //{
+            //    clientePesquisadoEmail = clientePesquisadoEmail.Where(a => a.Email == pesquisa);
+            //}           
+
+            List<Cliente> cliList = new List<Cliente>();
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM CLIENTE", conexao);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                DataTable dt = new DataTable();
+
+                da.Fill(dt);
+
+                conexao.Close();
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    cliList.Add(
+                        new Cliente
+                        {
+                            Id = Convert.ToInt32(dr["Id"]),
+                            Nome = (string)(dr["Nome"]),
+                            Nascimento = Convert.ToDateTime(dr["Nascimento"]),
+                            Sexo = Convert.ToString(dr["Sexo"]),
+                            CPF = Convert.ToString(dr["CPF"]),
+                            Telefone = Convert.ToString(dr["Telefone"]),
+                            Email = Convert.ToString(dr["Email"]),
+                            Senha = Convert.ToString(dr["Senha"]),
+                            Situacao = Convert.ToString(dr["Situacao"])
+                        });
+                }
+                ;
+                return cliList.ToPagedList<Cliente>(NumeroPagina, RegistroPorPagina);
+            }
+        }
+
     }
 }

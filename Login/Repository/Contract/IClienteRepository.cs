@@ -1,4 +1,5 @@
 ﻿using Login.Models;
+using X.PagedList;
 
 namespace Login.Repository.Contract
 {
@@ -14,7 +15,7 @@ namespace Login.Repository.Contract
 
         void Atualizar(Cliente cliente);
 
-        Cliente ObterCliente(Cliente cliente);
+        Cliente ObterClienteporId(int Id);
 
         Cliente BuscaCpfCliente(string CPF);
 
@@ -28,6 +29,6 @@ namespace Login.Repository.Contract
 
         IEnumerable<Cliente> ObterTodosClientes();
 
-        //IPagedList<Cliente> ObterTodosClientes(int? pagina, string email)
+        IPagedList<Cliente> ObterTodosClientes(int? pagina, string email);
     }
 }
